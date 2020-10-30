@@ -8,7 +8,7 @@
 <head>
 <meta charset="utf-8">
 <title>LOG IN</title>
-
+<link rel="shortcut icon" type="image/x-icon" href="${contextPath}/resources/img/logo-dark.png" />
 <link href="${contextPath}/resources/css/bootstrap.min.css"
 	rel="stylesheet">
 <link href="${contextPath}/resources/css/common.css" rel="stylesheet">

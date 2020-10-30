@@ -29,6 +29,7 @@
 		<div class="view-details">
 			<img src="${viewImageLink}" 
 				width="300px" height="300px" />
+						<label for="Name">Name:</label>	
 			
 			<input  type="text" name="Name" style="text-align:center;font-size:16pt;"   class="details-text" placeholder="dd" value="${viewName}" readonly="readonly">
 			<label for="Bio">Biography:</label>	

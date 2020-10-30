@@ -1,7 +1,6 @@
 package com.daneeats.auth.model;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "dbusers")
@@ -24,8 +23,7 @@ public class User {
 	@Transient // this field will not be saved in the database.
 	private String passwordConfirm;
 
-	@ManyToMany
-	private Set<Role> roles;
+	
 
 	public Long getId() {
 		return id;
@@ -75,13 +73,6 @@ public class User {
 		this.passwordConfirm = passwordConfirm;
 	}
 
-	public Set<Role> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
-	}
 
 	public String getImgurl() {
 		return imgurl;

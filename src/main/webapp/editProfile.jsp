@@ -6,6 +6,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="shortcut icon" type="image/x-icon" href="${contextPath}/resources/img/logo-dark.png" />
+
 <meta charset="utf-8">
 <title>EDIT PROFILE</title>
 
@@ -21,8 +23,7 @@
 		<form:form method="POST" action="${contextPath}/editProfile" modelAttribute="userForm" enctype="multipart/form-data">
 			<div class="view-details">
 				<img src="${viewImageLink}" 
-					width="300px" height="300px" id="blah1" />
-
+					width="250px" height="250px" id="blah1" />
 				<spring:bind path="name">
 					<div class="form-group ${status.error ? 'has-error' : ''}">
 						<form:input type="text" name="Name"

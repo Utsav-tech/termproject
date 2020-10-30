@@ -5,24 +5,21 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.daneeats.auth.model.User;
-import com.daneeats.auth.repository.RoleRepository;
 import com.daneeats.auth.repository.UserRepository;
 
-import java.util.HashSet;
 
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
-    @Autowired
-    private RoleRepository roleRepository;
+ 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
     public void save(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setRoles(new HashSet<>(roleRepository.findAll()));
+        
         userRepository.save(user);
     }
     public void save1(User user) {

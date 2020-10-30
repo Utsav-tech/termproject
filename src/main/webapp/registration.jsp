@@ -47,7 +47,7 @@
 
 				<div class="form-group ${status.error ? 'has-error' : ''}">
 					<form:input type="text" class="form-control register-text"
-						placeholder="Name Please!" path="name" required="required"></form:input>
+						placeholder="First Name + Last Name" path="name" required="required"></form:input>
 					<form:errors path="name"></form:errors>
 
 				</div>

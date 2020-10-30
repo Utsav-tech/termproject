@@ -26,13 +26,13 @@ import com.daneeats.auth.validator.UserValidator;
 
 @Controller
 public class UserController {
-	
+
 	@Value("${accesskey}")
-    String accesskey;
-    @Value("${secretkey}")
-    String secretkey;
-    @Value("${bucketName}")
-    String bucketName;
+	String accesskey;
+	@Value("${secretkey}")
+	String secretkey;
+	@Value("${bucketName}")
+	String bucketName;
 	@Autowired
 	private UserService userService;
 
@@ -50,35 +50,37 @@ public class UserController {
 	}
 
 	@PostMapping("/registration")
-	public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult,@RequestParam("photo") MultipartFile image) {
+	public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult,
+			@RequestParam("photo") MultipartFile image) {
 		userValidator.validate(userForm, bindingResult);
 
 		if (bindingResult.hasErrors()) {
 			return "registration";
 		}
-		 BasicAWSCredentials cred = new BasicAWSCredentials(accesskey, secretkey);
-	        // AmazonS3Client client=AmazonS3ClientBuilder.standard().withCredentials(new
-	        // AWSCredentialsProvider(cred)).with
-	        AmazonS3 client = AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(cred))
-	                .withRegion(Regions.US_EAST_1).build();
-	        try {
-	            PutObjectRequest put = new PutObjectRequest(bucketName, image.getOriginalFilename(),
-	                    image.getInputStream(), new ObjectMetadata()).withCannedAcl(CannedAccessControlList.PublicRead);
-	            client.putObject(put);
+		BasicAWSCredentials cred = new BasicAWSCredentials(accesskey, secretkey);
+		// AmazonS3Client client=AmazonS3ClientBuilder.standard().withCredentials(new
+		// AWSCredentialsProvider(cred)).with
+		AmazonS3 client = AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(cred))
+				.withRegion(Regions.US_EAST_1).build();
+		try {
+			PutObjectRequest put = new PutObjectRequest(bucketName, image.getOriginalFilename(), image.getInputStream(),
+					new ObjectMetadata()).withCannedAcl(CannedAccessControlList.PublicRead);
+			client.putObject(put);
 
-	            String imgSrc = "http://" + bucketName + ".s3.amazonaws.com/" + image.getOriginalFilename();
+			String imgSrc = "http://" + bucketName + ".s3.amazonaws.com/" + image.getOriginalFilename();
 
-	            userForm.setImgurl(imgSrc);
+			userForm.setImgurl(imgSrc);
 
-	            //Save this in the DB. 
-	        } catch (IOException e) {
-	            // TODO Auto-generated catch block
-	            e.printStackTrace();
-	            
-	        }
+			// Save this in the DB.
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+
+		}
 		userService.save(userForm);
 
-		//securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
+		// securityService.autoLogin(userForm.getUsername(),
+		// userForm.getPasswordConfirm());
 
 		return "redirect:/welcome";
 	}
@@ -101,7 +103,7 @@ public class UserController {
 		return "index";
 	}
 
-	@PostMapping("/welcome") 
+	@PostMapping("/welcome")
 	public String checklogin(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
 
 		userValidator.validateLogin(userForm, bindingResult);
@@ -124,7 +126,7 @@ public class UserController {
 		modelandview.addObject("viewName", user.getName());
 		modelandview.addObject("viewUsername", user.getUsername());
 		modelandview.addObject("viewBiography", "      " + user.getBiography());
-		modelandview.addObject("viewImageLink",user.getImgurl());
+		modelandview.addObject("viewImageLink", user.getImgurl());
 
 		return modelandview;
 	}
@@ -136,43 +138,42 @@ public class UserController {
 		ModelAndView modelandview = new ModelAndView("editProfile");
 		modelandview.addObject("viewName", user.getName());
 		modelandview.addObject("viewUsername", user.getUsername());
-		modelandview.addObject("viewBiography", "      " +user.getBiography());
+		modelandview.addObject("viewBiography", "      " + user.getBiography());
 		modelandview.addObject("viewImageLink", user.getImgurl());
 		return modelandview;
 	}
 
 	@PostMapping("/editProfile")
-	public String editprofile(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model,@RequestParam("photo") MultipartFile image) {
-		//userValidator.validate(userForm, bindingResult);
+	public String editprofile(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model,
+			@RequestParam("photo") MultipartFile image) {
+		// userValidator.validate(userForm, bindingResult);
 		if (bindingResult.hasErrors()) {
 			return "welcome";
 		}
 		User user = userService.findByUsername(userValidator.username);
-		// user.setUsername(userForm.getUsername());
+
 		user.setName(userForm.getName());
 		user.setBiography(userForm.getBiography());
 		userForm.setPassword(user.getPassword());
-		 BasicAWSCredentials cred = new BasicAWSCredentials(accesskey, secretkey);
-	        // AmazonS3Client client=AmazonS3ClientBuilder.standard().withCredentials(new
-	        // AWSCredentialsProvider(cred)).with
-	        AmazonS3 client = AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(cred))
-	                .withRegion(Regions.US_EAST_1).build();
-	        try {
-	            PutObjectRequest put = new PutObjectRequest(bucketName, image.getOriginalFilename(),
-	                    image.getInputStream(), new ObjectMetadata()).withCannedAcl(CannedAccessControlList.PublicRead);
-	            client.putObject(put);
+		BasicAWSCredentials cred = new BasicAWSCredentials(accesskey, secretkey);
 
-	            String imgSrc = "http://" + bucketName + ".s3.amazonaws.com/" + image.getOriginalFilename();
+		AmazonS3 client = AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(cred))
+				.withRegion(Regions.US_EAST_1).build();
+		try {
 
-	            user.setImgurl(imgSrc);
+			if (!image.getOriginalFilename().isEmpty() && image.getOriginalFilename().length() > 0) {
+				PutObjectRequest put = new PutObjectRequest(bucketName, image.getOriginalFilename(),
+						image.getInputStream(), new ObjectMetadata()).withCannedAcl(CannedAccessControlList.PublicRead);
+				client.putObject(put);
+				String imgSrc = "http://" + bucketName + ".s3.amazonaws.com/" + image.getOriginalFilename();
+				user.setImgurl(imgSrc);
+			} 
 
-	            //Save this in the DB. 
-	        } catch (IOException e) {
-	            // TODO Auto-generated catch block
-	            e.printStackTrace();
-	            
-	        }
-		
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+
+		}
 		userService.save1(user);
 		return "redirect:/welcome";
 	}

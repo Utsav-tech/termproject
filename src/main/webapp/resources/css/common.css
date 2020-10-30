@@ -1,6 +1,13 @@
 @import
 	url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
+#page-top{
+	background-image: url("/resources/img/study.jpg");	
+		background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: auto;
+	min-height: 100vh;
+}
 body {
 	padding-top: 0px;
 	padding-bottom: 0px;
@@ -143,21 +150,20 @@ input[type="file"] {
 }
 
 .details-text {
-	width: 50vw;
+	width: 45vw;
 	flex-basis: 50px;
 	margin: 3px;
 	border-radius: 15px;
 	outline: none;
 	background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-		font-weight: bold;
-	
+	font-weight: bold;
 }
 
 .details-textarea {
 	resize: none;
 	outline: none;
 	overflow: auto;
-	width: 50vw;
+	width: 45vw;
 	border-radius: 10px;
 	background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 	font-size: 14px;
@@ -170,23 +176,19 @@ input[type="file"] {
 	float: right;
 }
 
-.welcome {
+.welcome, .editprofile {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 100%;
 	height: 100vh;
 	background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
-	
 }
+
 .editprofile {
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	width: 100%;
-	height: 100vh;
-	background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%); 
-	}
-.image-pg{
+	background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+}
+
+.image-pg {
 	margin-left: 10em;
 }
