@@ -1,0 +1,194 @@
+@import
+	url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+#page-top{
+	background-image: url("/resources/img/study.jpg");	
+		background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: auto;
+	min-height: 100vh;
+}
+body {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	background-color: #eee;
+	font-family: 'Roboto';
+}
+
+.form-signin {
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+.form-signin .form-signin-heading, .form-signin .checkbox {
+	margin-bottom: 10px;
+}
+
+.form-signin .checkbox {
+	font-weight: normal;
+}
+
+.form-signin .form-control {
+	position: relative;
+	height: auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+	z-index: 2;
+}
+
+.form-signin input {
+	margin-top: 10px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.form-signin button {
+	margin-top: 10px;
+}
+
+.has-error {
+	color: red
+}
+
+.register-main {
+	min-height: 100vh;
+	width: auto;
+	background-image: url("/resources/img/signup-bg.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.login-main {
+	min-height: 100vh;
+	width: auto;
+	background-image: url("/resources/img/login.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.form-signin {
+	border: 3px solid;
+	border-radius: 1em;
+	border-color: white;
+	align-content: center;
+	margin-top: 5vh;
+	box-sizing: content-box;
+	width: 100%;
+}
+
+.marg-login {
+	margin-top: 20vh;
+}
+
+.form-signin-heading {
+	font-weight: bold;
+	text-align: center;
+	padding-top: 1rem;
+	color: #008040;
+}
+
+.register-textarea {
+	outline: none;
+	resize: vertical;
+	overflow: auto;
+}
+
+.register-textarea:focus, .register-text:focus {
+	border: 3px solid;
+	border-color: #804000;
+}
+
+input[type="file"] {
+	display: none;
+}
+
+.image-upload {
+	border: 1px solid #ccc;
+	padding: 6px 12px;
+	cursor: pointer;
+	float: left;
+}
+
+#blah {
+	float: right;
+	margin-right: 10px;
+	padding-bottom: 20px;
+	outline: none;
+}
+
+.welcome-banner {
+	margin-top: 2em;
+	margin-left: 30%
+}
+
+.logout-btn {
+	margin-left: 20em;
+}
+
+.logout-btn, .welcome-banner {
+	display: inline-block;
+}
+
+.view-details {
+	margin-top: 7em;
+	display: flex;
+	flex-flow: column;
+	position: relative;
+	width: 80vw;
+	flex-wrap: wrap;
+	height: 40vh;
+	margin-left: 5em;
+}
+
+.details-text {
+	width: 45vw;
+	flex-basis: 50px;
+	margin: 3px;
+	border-radius: 15px;
+	outline: none;
+	background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+	font-weight: bold;
+}
+
+.details-textarea {
+	resize: none;
+	outline: none;
+	overflow: auto;
+	width: 45vw;
+	border-radius: 10px;
+	background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.Edit-Profile {
+	margin: 5em;
+	width: 10vw;
+	float: right;
+}
+
+.welcome, .editprofile {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
+	background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+.editprofile {
+	background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+}
+
+.image-pg {
+	margin-left: 10em;
+}
