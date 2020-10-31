@@ -16,7 +16,11 @@
 
 ---------------  S U M M A R Y ------------
 
+<<<<<<< HEAD
+Command Line: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=52021 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -Xverify:none -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=Assignment4 -Dfile.encoding=UTF-8 com.daneeats.auth.WebApplication --spring.output.ansi.enabled=always
+=======
 Command Line: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=52021 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -Xverify:none -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=Assignment4 -Dfile.encoding=UTF-8 com.cloudpacks.site.WebApplication --spring.output.ansi.enabled=always
+>>>>>>> a54f919673522c80f514cff5366626549ecf014d
 
 Host: Intel(R) Core(TM) i7-1065G7 CPU @ 1.30GHz, 8 cores, 7G,  Windows 10 , 64 bit Build 18362 (10.0.18362.1110)
 Time: Wed Oct 28 18:36:28 2020 Eastern Daylight Time elapsed time: 1 seconds (0d 0h 0m 1s)
@@ -521,7 +525,11 @@ symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Pr
 
 VM Arguments:
 jvm_args: -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=52021 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -Xverify:none -XX:TieredStopAtLevel=1 -Dspring.boot.project.name=Assignment4 -Dfile.encoding=UTF-8 
+<<<<<<< HEAD
+java_command: com.daneeats.auth.WebApplication --spring.output.ansi.enabled=always
+=======
 java_command: com.cloudpacks.site.WebApplication --spring.output.ansi.enabled=always
+>>>>>>> a54f919673522c80f514cff5366626549ecf014d
 java_class_path (initial): C:\Users\Utsav\Documents\workspace-spring-tool-suite-4-4.7.1.RELEASE\Assignment4\target\classes;C:\Users\Utsav\.m2\repository\org\springframework\boot\spring-boot-starter-web\2.2.3.RELEASE\spring-boot-starter-web-2.2.3.RELEASE.jar;C:\Users\Utsav\.m2\repository\org\springframework\boot\spring-boot-starter\2.2.3.RELEASE\spring-boot-starter-2.2.3.RELEASE.jar;C:\Users\Utsav\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.2.3.RELEASE\spring-boot-starter-logging-2.2.3.RELEASE.jar;C:\Users\Utsav\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\Utsav\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;C:\Users\Utsav\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.12.1\log4j-to-slf4j-2.12.1.jar;C:\Users\Utsav\.m2\repository\org\apache\logging\log4j\log4j-api\2.12.1\log4j-api-2.12.1.jar;C:\Users\Utsav\.m2\repository\org\slf4j\jul-to-slf4j\1.7.30\jul-to-slf4j-1.7.30.jar;C:\Users\Utsav\.m2\repository\org\springframework\spring-core\5.2.3.RELEASE\spring-core-5.2.3.RELEASE.jar;C:\Users\Utsav\.m2\repository\org\springframework\spring-jcl\5.2.3.RELEASE\spring-jcl-5.2.3.RELEASE.jar;C:\Users\Utsav\.m2\repository\org\yaml\snakeyaml\1.25\snakeyaml-1.25.jar;C:\Users\Utsav\.m2\repository\org\springframework\boot\spring-boot-starter-json\2.2.3.RELEASE\spring-boot-starter-json-2.2.3.RELEASE.jar;C:\Users\Utsav\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.2\jackson-databind-2.10.2.jar;C:\Users\Utsav\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.2\jackson-annotations-2.10.2.jar;C:\Users\Utsav\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.2\jackson-core-2.10.2.jar;C:\Users\Utsav\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.10.2\jackson-datatype-jdk8-2.10.2.jar;C:\Users\Utsav\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.10.2\jackson-datatype-jsr310-2.10.2.jar;C:\Users\Utsav\
 Launcher Type: SUN_STANDARD
 

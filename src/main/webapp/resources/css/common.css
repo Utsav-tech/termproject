@@ -143,9 +143,9 @@ input[type="file"] {
 	display: flex;
 	flex-flow: column;
 	position: relative;
-	width: 80vw;
+	width: 70vw;
 	flex-wrap: wrap;
-	height: 40vh;
+	height:40vh;
 	margin-left: 5em;
 }
 
